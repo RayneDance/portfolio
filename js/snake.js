@@ -3,7 +3,7 @@ let snake = new GameEngine(game, document.getElementById("snakeCanvas"));
     let snakeCanvas = document.getElementById("snakeCanvas");
     let ctx = snakeCanvas.getContext("2d");
     ctx.moveTo(0, 0);
-    snake.configuration.debug = true;
+    snake.configuration.debug = false;
     snake.configuration.tickRate = 100;
     snake.canvas = document.getElementById("snakeCanvas");
     createUI();
@@ -50,7 +50,15 @@ function game(){
                         ymov = -50;
                         newvec = [0,-1,0]
                         break;
+                    case "ARROW-UP":
+                        ymov = -50;
+                        newvec = [0,-1,0]
+                        break;
                     case "A":
+                        xmov = -50;
+                        newvec = [-1,0,0]
+                        break;
+                    case "ARROW-LEFT":
                         xmov = -50;
                         newvec = [-1,0,0]
                         break;
@@ -58,7 +66,15 @@ function game(){
                         ymov = 50;
                         newvec = [0,1,0]
                         break;
+                    case "ARROW-DOWN":
+                        ymov = 50;
+                        newvec = [0,1,0]
+                        break;
                     case "D":
+                        xmov = 50;
+                        newvec = [1,0,0]
+                        break;
+                    case "ARROW-RIGHT":
                         xmov = 50;
                         newvec = [1,0,0]
                         break;
