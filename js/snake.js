@@ -36,6 +36,8 @@ function game(){
     }
     if(state.state == 2){
         if(Date.now() - state.lastMoveTick > 1000/state.snakeSpeed){
+            let header = document.getElementById("snakeHeader");
+            header.innerHTML=state.score;
             let input = snake.getLastInput();
             state.lastMoveTick = Date.now();
 
@@ -126,7 +128,7 @@ function game(){
                     }
                     if(current.vector[1] == -1){
                         current.y += -50;
-                        current.rotation = 90;
+                        current.rotation = 270;
                     }
 
                     if(current.nextSegment === undefined){
@@ -313,6 +315,7 @@ function createUI(){
         snek.addImage("/portfolio/assets/img/snek.png");
         snek.x = 50+(50*i);
         snek.y = 0;
+        snek.rotation = 180;
     }
 
 
