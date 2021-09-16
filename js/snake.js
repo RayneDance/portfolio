@@ -83,7 +83,8 @@ function game(){
 
             for(let obj in snake.gameObjs){
                 if(obj == "SnakeHead"){
-                   
+                    if(!(newvec[0] == 1 && snake.gameObjs["SnakeHead"].vector[0] == -1) && !(newvec[0] == -1 && snake.gameObjs["SnakeHead"].vector[0] == 1) &&
+                        !(newvec[1] == 1 && snake.gameObjs["SnakeHead"].vector[1] == -1) && !(newvec[1] == -1 && snake.gameObjs["SnakeHead"].vector[1] == 1)){
                         snake.gameObjs["SnakeHead"].vector = newvec;
                         if(newvec[1] == -1){
                             snake.gameObjs["SnakeHead"].rotation = 0;
@@ -125,7 +126,21 @@ function game(){
                                 return;
                             }
                         }
-                        
+                    }else{
+                        if(snake.gameObjs["SnakeHead"].vector[0] == 1){
+                            snake.gameObjs["SnakeHead"].x += 50;
+                        }
+                        if(snake.gameObjs["SnakeHead"].vector[0] == -1){
+                            snake.gameObjs["SnakeHead"].x += -50;
+                        }
+                        if(snake.gameObjs["SnakeHead"].vector[1] == 1){
+                            snake.gameObjs["SnakeHead"].y += 50;
+                        }
+                        if(snake.gameObjs["SnakeHead"].vector[1] == -1){
+                            snake.gameObjs["SnakeHead"].y += -50;
+                        }
+
+                    }
                 }
 
                 if(obj.includes("SnakeSection")){
