@@ -35,6 +35,7 @@ function game(){
         }
     }
     if(state.state == 2){
+        state.snakeSpeed = 2+(2*state.score/12)
         if(Date.now() - state.lastMoveTick > 1000/state.snakeSpeed){
             let header = document.getElementById("snakeHeader");
             header.innerHTML=state.score;
