@@ -178,6 +178,7 @@ class GameEngine {
     handleKeyPress(kp){
         let keycode = String.fromCharCode(kp.keyCode);
 
+        // Arrow keys need translation, most other keypresses do not.
         switch (kp.keyCode){
             case 37:
                 keycode = "ARROW-LEFT";
