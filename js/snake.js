@@ -170,12 +170,15 @@ function game(){
                         }
                     }
                 }
+                if(obj.includes("SnakeSection")){
+                    if(snake.gameObjs[obj].rotation != snake.gameObjs[obj].previousSection.rotation){
+                        snake.gameObjs[obj].addImage("/portfolio/assets/img/corner.png")
+                    }else{
+                        snake.gameObjs[obj].addImage("/portfolio/assets/img/snek.png")
+                    }
+                }
             }
-
-            if(foodCheck()){
-
-            }
-
+            foodCheck();
             snake.inputs = [];
         }  
     }
