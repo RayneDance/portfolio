@@ -16,7 +16,14 @@ class triangleGenerator {
 
         let dot = [Math.floor(Math.random()*this.canvas.width), Math.floor(Math.random()*this.canvas.height)];
         let color = document.getElementById("colorPicker").value;
+        let rainbow = false;
+        if (color == "#ffffff"){
+            rainbow = true;
+        }
         for(let i = 0; i < dots; i++){
+            if (rainbow){
+                color = "#"+Math.floor(Math.random()*16777215).toString(16);
+            }
             // Reduce outliers
             if(i > 10){
                 ctx.fillStyle = color;
@@ -70,7 +77,7 @@ window.addEventListener("load", function(){
 
         let factor = 2;
 
-        console.log(dotPairs);
+        //console.log(dotPairs);
         triangles.draw(document.getElementById("dotsRange").value, dotPairs, factor);
     });
 
