@@ -60,15 +60,25 @@
                                         <i class="fas fa-star me-1"></i>
                                         <b id="snakeHeader">Triangles!</b>
                                     </div>
-                                    <div class="card-body">
-                                    <canvas id="triangleCanvas" style="border: 1px solid #000000;" width=600 height=400>
-                                        test
-                                    </canvas>
-                                    <button id="generate">Generate</button>
-                                    <button id="clearCanvas">Clear</button>
-                                    <label for="dotsRange">Draw dots (1000 to 100,000)</label>
-                                    <input type="range" min="1000" max="100000" value="10000" class="slider" id="dotsRange">
-                                    <input type="color" id="colorPicker" value="#000">
+                                    <div class="card-body two-row">
+                                        <div class="two-row">
+                                        <canvas id="triangleCanvas" style="border: 1px solid #000000;" width=600 height=400>
+                                            test
+                                        </canvas>
+                                        </div>
+                                        <div>
+                                            <div>
+                                                Draw towards(top left = (0,0), bottom right = (600,400)):<br>
+                                                <input type="text" value="0" class="point-input"><input type="text" value="400" class="point-input"><br>
+                                                <input type="text" value="600" class="point-input"><input type="text" value="400" class="point-input"><br>
+                                                <input type="text" value="300" class="point-input"><input type="text" value="0" class="point-input"><br>
+                                            </div>
+                                        <button id="generate">Generate</button>
+                                        <button id="clearCanvas">Clear</button>
+                                        <label for="dotsRange">Draw dots (1000 to 100,000)</label>
+                                        <input type="range" min="1000" max="100000" value="10000" class="slider" id="dotsRange">
+                                        <input type="color" id="colorPicker" value="#000">
+                                        </div>
                                     </div>
                                 </div>
                             </div>

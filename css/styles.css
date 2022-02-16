@@ -11691,3 +11691,9 @@ ul {
   list-style-type: square;
 }
 
+.two-row{
+  display: flex;
+}
+.point-input{
+  width: 50px;
+}
