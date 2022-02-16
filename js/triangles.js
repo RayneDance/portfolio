@@ -3,7 +3,7 @@ class triangleGenerator {
         this.canvas = canvas;
     }
 
-    draw(dots, dotPairs){
+    draw(dots, dotPairs, factor){
 
         let ctx = this.canvas.getContext("2d");
         //Just to be really really sure
@@ -24,7 +24,7 @@ class triangleGenerator {
             }
             let newDirection = randomMoves[Math.floor(Math.random()*dotPairs.length)];
             
-            dot = [dot[0]+Math.floor((newDirection[0] - dot[0])/2), dot[1]+Math.floor((newDirection[1] - dot[1])/2)];
+            dot = [dot[0]+Math.floor((newDirection[0] - dot[0])/factor), dot[1]+Math.floor((newDirection[1] - dot[1])/factor)];
             //console.log(dot);
         }
     }
@@ -34,6 +34,24 @@ class triangleGenerator {
         ctx.clearRect(0,0, this.canvas.width, this.canvas.height);
         ctx.fillStyle = "white";
         ctx.fillRect(0, 0, canvas.width, canvas.height);
+    }
+
+    pascal(pascals){
+        let ctx = this.canvas.getContext("2d");
+        let color = document.getElementById("colorPicker").value;
+        ctx.fillStyle = color;
+        let divisor = document.getElementById("factor").value;
+        let xoffset = 300;
+
+        for(let i = 0; i < pascals.length; i++){
+            for(let j = 0; j < pascals[i].length; j++){
+                if(pascals[i][j] % BigInt(divisor) == 0){
+                    ctx.fillRect(xoffset-(pascals[i].length/2)+j, i, 1, 1);
+                }
+            }
+        }
+
+
     }
 }
 
@@ -50,8 +68,10 @@ window.addEventListener("load", function(){
             dotPairs.push([dots[i].value, dots[i+1].value]);
         }
 
+        let factor = 2;
+
         console.log(dotPairs);
-        triangles.draw(document.getElementById("dotsRange").value, dotPairs);
+        triangles.draw(document.getElementById("dotsRange").value, dotPairs, factor);
     });
 
     let clearCanvas = document.getElementById("clearCanvas");
@@ -61,4 +81,39 @@ window.addEventListener("load", function(){
 
         triangles.clear();
     });
+
+    let addPoint = document.getElementById("addPoint");
+
+    addPoint.addEventListener("click", () => {
+        let pointList = document.getElementById("listOfPoints");
+        pointList.innerHTML = pointList.innerHTML + '<input type="text" value="0" class="point-input"><input type="text" value="0" class="point-input"><br>';
+    });
+
+    let pascalGenerate = document.getElementById("pascal");
+
+    pascalGenerate.addEventListener("click", () => {
+        let triangles = new triangleGenerator(document.getElementById("triangleCanvas"));
+        triangles.pascal(pascalsTriangle);
+    });
+
+
+    let pascalsTriangle = generatePascalsTriangle();
 });
+
+function generatePascalsTriangle(){
+    let rows = [BigInt(1)];
+
+    while (rows.length < 400){
+        let newRow = [BigInt(1)]
+        for (let i = 0; i < rows[rows.length -1].length; i++){
+            if (i == rows[rows.length-1].length-1){
+                newRow.push(BigInt(1));
+            }
+            else{
+                newRow.push(BigInt(rows[rows.length-1][i] + rows[rows.length-1][i+1]))
+            }
+        }
+        rows.push(newRow);
+    }
+    return rows;
+}

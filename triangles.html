@@ -67,17 +67,21 @@
                                         </canvas>
                                         </div>
                                         <div>
-                                            <div>
+                                            <div id="listOfPoints">
                                                 Draw towards(top left = (0,0), bottom right = (600,400)):<br>
                                                 <input type="text" value="0" class="point-input"><input type="text" value="400" class="point-input"><br>
                                                 <input type="text" value="600" class="point-input"><input type="text" value="400" class="point-input"><br>
                                                 <input type="text" value="300" class="point-input"><input type="text" value="0" class="point-input"><br>
                                             </div>
+                                        <button id="addPoint">Add point</button>
                                         <button id="generate">Generate</button>
                                         <button id="clearCanvas">Clear</button>
                                         <label for="dotsRange">Draw dots (1000 to 100,000)</label>
                                         <input type="range" min="1000" max="100000" value="10000" class="slider" id="dotsRange">
-                                        <input type="color" id="colorPicker" value="#000">
+                                        <input type="color" id="colorPicker" value="#000000"><br>
+                                        Pascal generator number:
+                                        <input type="text" value="2" id="factor">
+                                        <button id="pascal">Generate using Pascals triagle.</button>
                                         </div>
                                     </div>
                                 </div>
