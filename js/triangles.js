@@ -53,7 +53,7 @@ class triangleGenerator {
         for(let i = 0; i < pascals.length; i++){
             for(let j = 0; j < pascals[i].length; j++){
                 if(pascals[i][j] % BigInt(divisor) == 0){
-                    ctx.fillRect(xoffset-(pascals[i].length/2)+j, i, 1, 1);
+                    ctx.fillRect(Math.round(xoffset-(pascals[i].length/2)+j), i, 1, 1);
                 }
             }
         }
