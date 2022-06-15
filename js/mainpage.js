@@ -25,11 +25,44 @@ var gamesHTML = `
 </div>
 </div>
 <div class="col-xl-6">
-<div class="card mb-4">
-<div class="card-header">
-    <i class="fas fa-chart-bar me-1"></i>
-    Bar Chart Example
+<div class="card-body"></div>
 </div>
+</div>
+`
+
+var certsHTML = `
+<div class="col-xl-6">
+<div class="card mb-4">
+    <div class="card-header">
+        Certifications
+    </div>
+    <div class="card-body">
+    <p><a href="https://coursera.org/share/a4568a86b1df541c4505ce568948c8db"><i>Google IT Automation with Python</i></a></p>
+    <p>The hands-on curriculum is designed to teach learners how to write code in Python, with a special focus on how this applies to automating tasks in the
+    world of IT support and systems administration. They should have a strong foundation in how to use Git and GitHub, troubleshoot and debug complex problems, and apply
+    automation at scale by using configuration management and the Cloud in order to prepare them for more advanced IT Support Specialist or Junior Systems Administrator positions.
+    </p>
+    </div>
+</div>
+</div>
+<div class="col-xl-6">
+<div class="card-body"></div>
+</div>
+</div>
+`
+
+var eulerHTML = `
+<div class="col-xl-6">
+<div class="card mb-4">
+    <div class="card-header">
+        Project Euler
+    </div>
+    <div class="card-body">
+    <p>Under construction. Questions solved: 1-25, 28, 30</p>
+    </div>
+</div>
+</div>
+<div class="col-xl-6">
 <div class="card-body"></div>
 </div>
 </div>
@@ -44,4 +77,14 @@ function ProjectsMain(){
 function GamesMain(){
     let outer = document.getElementById("mainpageContentLoad");
     outer.innerHTML = gamesHTML;
+}
+
+function CertsMain(){
+    let outer = document.getElementById("mainpageContentLoad");
+    outer.innerHTML = certsHTML;
+}
+
+function EulerMain(){
+    let outer = document.getElementById("mainpageContentLoad");
+    outer.innerHTML = eulerHTML;
 }
