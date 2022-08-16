@@ -19,10 +19,46 @@ class GameObject {
     }
 
     // Take a string, make it an img.  Ez.
-    addImage(img){
+    // Orientation is rotation in degrees.
+    // Images passed may need a default orientation
+    addImage(img, orientation = 0){
         let hold = new Image();
         hold.src = img;
         this.img = hold;
+        this.orientation = orientation;
+        this.rotation = orientation;
+    }
+
+    orient(facing){
+
+        switch (facing){
+            case 0:
+            case 'up':
+            case 'UP':
+                this.rotation = 0 + this.orientation;
+        }
+    }
+
+    rotate(degrees){
+        let temporary = this.rotation + degrees;
+
+        if (temporary > 360){
+            this.rotation = temporary % 360;
+        }
+
+        if (temporary < 0){
+            this.rotation = 360 - (abs(temporary) % 360);
+        }
+
+    }
+
+    rotateTo(degrees){
+        let newRotation = this.orientation + degrees;
+
+        if (newRotation > 360){
+            newRotation = newRotation % 360;
+        }
+        this.rotation = newRotation;
     }
 
 }

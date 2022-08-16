@@ -148,19 +148,19 @@ function game(){
                     let current = snake.gameObjs[obj];
                     if(current.vector[0] == 1){
                         current.x += 50;
-                        current.rotation = 0;
+                        current.rotateTo(0);
                     }
                     if(current.vector[0] == -1){
                         current.x += -50;
-                        current.rotation = 180;
+                        current.rotateTo(180);
                     }
                     if(current.vector[1] == 1){
                         current.y += 50;
-                        current.rotation = 90;
+                        current.rotateTo(90);
                     }
                     if(current.vector[1] == -1){
                         current.y += -50;
-                        current.rotation = 270;
+                        current.rotateTo(270);
                     }
 
                     if(current.nextSegment === undefined){
@@ -170,12 +170,9 @@ function game(){
                         }
                     }
                 }
+                // This needs to start at the head and go down the entire snake.
+                // Check if sections in front and behind are in a line
                 if(obj.includes("SnakeSection")){
-                    if(snake.gameObjs[obj].rotation != snake.gameObjs[obj].previousSection.rotation){
-                        snake.gameObjs[obj].addImage("/portfolio/assets/img/corner.png")
-                    }else{
-                        snake.gameObjs[obj].addImage("/portfolio/assets/img/snek.png")
-                    }
                 }
             }
             foodCheck();
@@ -226,21 +223,24 @@ function foodCheck(){
         snek.previousSection.nextSegment = snek;
         snek.x = last.x;
         snek.y = last.y;
+        // Rotation needs to match to the images aren't goofed up.
+        snek.rotation = snek.previousSection.rotation;
 
+        // Add new food
         let xcell = Math.floor(Math.random()*12);
         let ycell = Math.floor(Math.random()*8);
         let freepos = Array.from(Array(12), () => new Array(8));
-
+        // Fill array
         for(let i = 0; i < 12; i++){
             for(let j = 0; j < 8; j++){
                 freepos[i][j] = true; 
             }
         }
-        
+        // Block off all areas that snake occupies.
         for(obj in snake.gameObjs){
             freepos[snake.gameObjs[obj].x/50][snake.gameObjs[obj].y/50] = false;
         }
-        
+        // Find a random spot for new food
         while(freepos[xcell][ycell] == false){
             xcell = Math.floor(Math.random()*12);
             ycell = Math.floor(Math.random()*8);
@@ -277,14 +277,13 @@ function prepGame(){
     snake.gameObjs["GameState"].score = 0;
 
     let snek = snake.newGameObject("SnakeHead");
-    snek.addImage("/portfolio/assets/img/snekhead.png");
+    snek.addImage("/portfolio/assets/img/snekhead.png", 90);
     snek.hascollider = true;
     snek.colliderwidth = 50;
     snek.colliderheight = 50;
     snek.x = 300;
     snek.y = 200;
     snek.vector = [1,0,0];
-    snek.rotation = 90;
     snek.nextSegment = undefined;
 
     for(let i = 1; i < 3; i++){
