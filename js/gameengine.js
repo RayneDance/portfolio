@@ -1,3 +1,4 @@
+import "./components/components.js";
 class GameObject {
 
     constructor(id){
@@ -16,6 +17,8 @@ class GameObject {
         this.rotation = 0;
         this.render = true;
         this.persist = false;
+        this.imageWidth = 0;
+        this.imageHeight = 0;
     }
 
     // Take a string, make it an img.  Ez.
@@ -174,8 +177,8 @@ class GameEngine {
             ctx.translate(-sortable[i].img.width/2, -sortable[i].img.height/2);
 
             //draw image
-            ctx.drawImage(sortable[i].img, 0, 0);
-
+            ctx.drawImage(sortable[i].img, 0, 0, sortable[i].img.width, sortable[i].img.height);
+            console.log(sortable)
             // Throw away translations/rotations.
             ctx.restore();
 
@@ -295,3 +298,5 @@ class GameEngine {
         return false;
     }
 }
+
+export {GameEngine, GameObject};
