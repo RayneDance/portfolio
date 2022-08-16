@@ -143,7 +143,7 @@ function game(){
 
                     }
                 }
-
+                // Move and rotate sections
                 if(obj.includes("SnakeSection")){
                     let current = snake.gameObjs[obj];
                     if(current.vector[0] == 1){
@@ -164,15 +164,19 @@ function game(){
                     }
 
                     if(current.nextSegment === undefined){
+                        // Need to add corner pieces here
                         while(current.id != "SnakeHead"){
+
+                            if (!current.vectorMatch(current.previousSection.vector)){
+                                current.addImage("/portfolio/assets/img/corner.png");
+                            }else{
+                                current.addImage("/portfolio/assets/img/snek.png");
+                            }
+
                             current.vector = current.previousSection.vector;
                             current = current.previousSection;
                         }
                     }
-                }
-                // This needs to start at the head and go down the entire snake.
-                // Check if sections in front and behind are in a line
-                if(obj.includes("SnakeSection")){
                 }
             }
             foodCheck();
@@ -278,6 +282,7 @@ function prepGame(){
 
     let snek = snake.newGameObject("SnakeHead");
     snek.addImage("/portfolio/assets/img/snekhead.png", 90);
+    snek.orient();
     snek.hascollider = true;
     snek.colliderwidth = 50;
     snek.colliderheight = 50;

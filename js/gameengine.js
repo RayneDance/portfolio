@@ -26,17 +26,10 @@ class GameObject {
         hold.src = img;
         this.img = hold;
         this.orientation = orientation;
-        this.rotation = orientation;
     }
 
     orient(facing){
-
-        switch (facing){
-            case 0:
-            case 'up':
-            case 'UP':
-                this.rotation = 0 + this.orientation;
-        }
+        this.rotation = this.orientation;
     }
 
     rotate(degrees){
@@ -59,6 +52,17 @@ class GameObject {
             newRotation = newRotation % 360;
         }
         this.rotation = newRotation;
+    }
+
+    vectorMatch(vector){
+        if (this.vector[0] != vector[0]){
+            return false;
+        }
+        
+        if (this.vector[1] != vector[1]){
+            return false;
+        }
+        return true;
     }
 
 }
