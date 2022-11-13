@@ -7,7 +7,7 @@ let engine = new GameEngine(animate, document.getElementById("backgroundAnimatio
     engine.configuration.tickRate = 24;
 
     generateBoxes();
-
+    engine.canvas.addEventListener("click", newBox);
     engine.start();
 })();
 
@@ -34,17 +34,21 @@ function animate(){
     }
 }
 
+function newBox(){
+    let ratex = Math.random() * 6 - 3;
+    let ratey = Math.random() * 6 - 3;
+    let x = Math.floor(1 + (Math.random() * window.innerWidth - 100));
+    let y = Math.floor(1 + (Math.random() * window.innerHeight - 100));
+    let tempObj = engine.newGameObject();
+    tempObj.addImage("assets/img/floating.png");
+    tempObj.x = x;
+    tempObj.y = y;
+    tempObj.ratex = ratex;
+    tempObj.ratey = ratey;
+}
+
 function generateBoxes(){
     for (let i = 0; i < 20; i++){
-        let ratex = Math.random() * 6 - 3;
-        let ratey = Math.random() * 6 - 3;
-        let x = Math.floor(1 + (Math.random() * window.innerWidth - 100));
-        let y = Math.floor(1 + (Math.random() * window.innerHeight - 100));
-        let tempObj = engine.newGameObject();
-        tempObj.addImage("assets/img/floating.png");
-        tempObj.x = x;
-        tempObj.y = y;
-        tempObj.ratex = ratex;
-        tempObj.ratey = ratey;
+        newBox();
     }
 }
