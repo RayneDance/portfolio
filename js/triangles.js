@@ -108,6 +108,7 @@ window.addEventListener("load", function(){
 });
 
 function generatePascalsTriangle(){
+    // Size of numbers gets much larger than int can hold.
     let rows = [BigInt(1)];
 
     while (rows.length < 400){
