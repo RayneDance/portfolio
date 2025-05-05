@@ -68,17 +68,14 @@ window.addEventListener("load", function(){
 
     generateButton.addEventListener("click", () => {
         let triangles = new triangleGenerator(document.getElementById("triangleCanvas"));
-        let dots = document.getElementsByClassName("point-input");
-        let dotPairs = [];
+        let dotPairs = getPointsFromInputs(); // Use the new function here
+        let factor = 2; // Default factor for chaos game
 
-        for (let i = 0; i < dots.length; i+=2){
-            dotPairs.push([dots[i].value, dots[i+1].value]);
-        }
-
-        let factor = 2;
-
-        //console.log(dotPairs);
-        triangles.draw(document.getElementById("dotsRange").value, dotPairs, factor);
+        triangles.draw(
+            document.getElementById("dotsRange").value,
+            dotPairs,
+            factor // Pass the factor for chaos game
+        );
     });
 
     let clearCanvas = document.getElementById("clearCanvas");
