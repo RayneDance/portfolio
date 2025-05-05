@@ -1,15 +1,26 @@
+--- START OF MODIFIED index.html ---
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>Alexander Jordan</title>
-        <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
+        <meta name="description" content="Portfolio of Alexander Jordan, Software Developer and Systems Architect specializing in simulation and infrastructure." />
+        <meta name="author" content="Alexander Jordan" />
+        <title>Alexander Jordan - Software Developer & Architect</title>
+        <!-- SB Admin CSS -->
         <link href="css/styles.css" rel="stylesheet" />
+        <!-- Font Awesome -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
+        <!-- Optional: Add Simple DataTables CSS if used elsewhere, otherwise remove -->
+        <!-- <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" /> -->
+        <style>
+            /* Optional: Style for skill badges */
+            .skill-badge {
+                margin: 0.15rem;
+                font-size: 0.85em; /* Slightly larger badges */
+            }
+        </style>
     </head>
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
@@ -17,123 +28,302 @@
             <a class="navbar-brand ps-3" href="index.html">Alexander Jordan</a>
             <!-- Sidebar Toggle-->
             <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
+            <!-- Navbar Search / Items (Optional) -->
         </nav>
         <div id="layoutSidenav">
             <div id="layoutSidenav_nav">
                 <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
                     <div class="sb-sidenav-menu">
                         <div class="nav">
-                            <div class="nav">
-                                <div class="sb-sidenav-menu-heading">Core</div>
-                                <a class="nav-link" href="index.html">
-                                    <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                                    Dashboard
-                                </a>
-                                <div class="sb-sidenav-menu-heading">Games</div>
-                                <a class="nav-link" href="snake.html">
-                                    <div class="sb-nav-link-icon"><i class="fas fa-gamepad"></i></div>
-                                    Snake
-                                </a>
-                                <a class="nav-link" href="tictac.html"> <!-- Fixed Link -->
-                                    <div class="sb-nav-link-icon"><i class="fas fa-border-all"></i></div>
-                                    Tic-Tac-Toe
-                                </a>
-                                <a class="nav-link active" href="triangles.html"> <!-- Added active class -->
-                                    <div class="sb-nav-link-icon"><i class="fas fa-draw-polygon"></i></div>
-                                    Sierpinski
-                                </a>
-                                <a class="nav-link" rel="me" href="https://counter.social/@FreedomATX" target="_blank">
-                                    <div class="sb-nav-link-icon"><i class="fas fa-hashtag"></i></div>
-                                    CounterSocial
-                                </a>
-                            </div>
+                            <div class="sb-sidenav-menu-heading">Core</div>
+                            <a class="nav-link active" href="index.html"> <!-- Set active -->
+                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                                Dashboard
+                            </a>
+
+                            <div class="sb-sidenav-menu-heading">Demos & Projects</div>
+                            <a class="nav-link" href="snake.html">
+                                <div class="sb-nav-link-icon"><i class="fas fa-gamepad"></i></div>
+                                Snake
+                            </a>
+                            <a class="nav-link" href="tictac.html">
+                                <div class="sb-nav-link-icon"><i class="fas fa-border-all"></i></div>
+                                Tic-Tac-Toe
+                            </a>
+                            <a class="nav-link" href="triangles.html">
+                                <div class="sb-nav-link-icon"><i class="fas fa-draw-polygon"></i></div>
+                                Sierpinski
+                            </a>
+                            <!-- Consider adding links to specific GitHub projects here if relevant -->
+
+                            <div class="sb-sidenav-menu-heading">Connect</div>
+                             <a class="nav-link" href="https://www.linkedin.com/in/alexander-jordan-a6238131/" target="_blank" rel="noopener noreferrer">
+                                <div class="sb-nav-link-icon"><i class="fab fa-linkedin"></i></div>
+                                Linkedin
+                            </a>
+                            <a class="nav-link" href="https://github.com/RayneDance" target="_blank" rel="noopener noreferrer">
+                                <div class="sb-nav-link-icon"><i class="fab fa-github"></i></div>
+                                GitHub
+                            </a>
+                             <a class="nav-link" href="https://app.codesignal.com/profile/alex_j13" target="_blank" rel="noopener noreferrer">
+                                <div class="sb-nav-link-icon"><i class="fas fa-laptop-code"></i></div>
+                                CodeSignal
+                            </a>
+                             <a class="nav-link" href="https://leetcode.com/jordanlalexander/" target="_blank" rel="noopener noreferrer">
+                                <div class="sb-nav-link-icon"><i class="fas fa-keyboard"></i></div>
+                                Leetcode
+                            </a>
+                             <a class="nav-link" rel="me" href="https://counter.social/@FreedomATX" target="_blank">
+                                <div class="sb-nav-link-icon"><i class="fas fa-hashtag"></i></div>
+                                CounterSocial
+                            </a>
+                        </div>
+                    </div>
+                    <div class="sb-sidenav-footer">
+                        <div class="small">Connect with me:</div>
+                        <!-- Add email or other preferred contact if desired -->
+                        Via Links Above
                     </div>
                 </nav>
             </div>
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">
-                        <h1 class="mt-4">whoami</h1>
+                        <h1 class="mt-4">Alexander Jordan</h1> <!-- Changed from whoami -->
                         <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item active">See what I can do!</li>
-                            <li class="breadcrumb-item active"><a href='https://www.linkedin.com/in/alexander-jordan-a6238131/' target='_'>Linkedin</a></li>
-                            <li class="breadcrumb-item active"><a href='https://github.com/RayneDance' target='_'>GitHub</a></li>
-                            <li class="breadcrumb-item active"><a href='https://app.codesignal.com/profile/alex_j13' target='_'>CodeSignal</a></li>
-                            <li class="breadcrumb-item active"><a href='https://leetcode.com/jordanlalexander/' target='_'>Leetcode Profile</a></li>
+                            <!-- Breadcrumb only needs Dashboard on index -->
+                            <li class="breadcrumb-item active">Dashboard</li>
+                            <!-- Moved external links to sidebar for cleaner look -->
                         </ol>
-                        <div class="row">
-                            <div class="col-xl-3 col-md-6">
+
+                        <!-- Professional Summary -->
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <p class="lead">
+                                    Software Developer and Systems Architect with 5 years of experience, including 3 years focused on the simulation industry.
+                                    I specialize in designing and implementing robust data pipelines, automating infrastructure, and architecting scalable simulation systems.
+                                    I thrive on diverse technical challenges and leveraging varied architectural approaches to create effective and maintainable solutions.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Clickable Cards - REVISED -->
+                         <div class="row">
+                            <div class="col-xl-4 col-md-6"> <!-- Adjusted grid for 3 cards -->
                                 <div class="card bg-primary text-white mb-4">
-                                    <div class="card-body">Projects</div>
+                                    <div class="card-body">Experience & Skills</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="#" onclick="ProjectsMain()">View Details</a>
+                                        <!-- Link now scrolls down or loads default content -->
+                                        <a class="small text-white stretched-link" href="#experienceDetails">View Details</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-xl-3 col-md-6">
+                            <div class="col-xl-4 col-md-6">
                                 <div class="card bg-info text-white mb-4">
-                                    <div class="card-body">Games</div>
+                                    <div class="card-body">Demos & Personal Projects</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="#" onclick="GamesMain()">Play!</a>
+                                        <a class="small text-white stretched-link" href="#" onclick="GamesMain()">Explore</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-xl-3 col-md-6">
+                             <div class="col-xl-4 col-md-6">
                                 <div class="card bg-success text-white mb-4">
-                                    <div class="card-body">Project Euler</div>
-                                    <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="#" onclick="EulerMain()">View Details</a>
-                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-md-6">
-                                <div class="card bg-danger text-white mb-4">
-                                    <div class="card-body">Certs</div>
+                                    <div class="card-body">Certifications</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
                                         <a class="small text-white stretched-link" href="#" onclick="CertsMain()">View Details</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>
                             </div>
+                            <!-- Removed Project Euler Card -->
                         </div>
+
+                        <!-- Main Content Area - Default: Experience Details -->
                         <div class="row" id="mainpageContentLoad">
-                            <div class="col-xl-12">
+                            <div class="col-12" id="experienceDetails"> <!-- Anchor for link -->
                                 <div class="card mb-4">
                                     <div class="card-header">
-                                        Projects I'm proud of.
+                                         <i class="fas fa-briefcase me-1"></i>
+                                        Professional Experience Highlights
                                     </div>
                                     <div class="card-body">
-                                        <a href='https://github.com/RayneDance/hockey-bot'>Discord NHL bot</a><p><i>Python</i><br>This bot pulled current day game data, as well as supporting querys for scores.</p>
-                                        <a href='https://github.com/RayneDance/tic-tac-toe'>tic-tac-toe</a><p><i>Python/PyGame</i><br>Proud of the effectiveness of my gameobj.py file for a rough entity/component system.</p>
-                                        <a href='https://github.com/RayneDance/Whitespace-Remover'>Whitespace Remover</a><p><i>JavaScript</i><br>Intercepts copy and trims any whitespace off front/back before sending to clipboard. Useful when copying things from a webpage.</p>
+                                        <div class="row">
+                                            <!-- Left Column: Architecture -->
+                                            <div class="col-lg-6 mb-3 mb-lg-0">
+                                                <h5>Principal Systems Architect</h5>
+                                                <ul>
+                                                    <li>Designed, planned, and managed software and infrastructure implementations across multiple simulation products.</li>
+                                                    <li>Ensured technical solutions aligned with strategic goals, customer requirements, and budget constraints.</li>
+                                                    <li>Facilitated communication and planning between development teams, C-level executives, and customers.</li>
+                                                    <li>Focused on creating robust, maintainable system plans, often aligning needs with existing technologies to optimize cost and timelines.</li>
+                                                    <li>Key Domains: System Design, Cloud Architecture (GCP), Kubernetes, CI/CD Strategy, Unreal Engine Integration.</li>
+                                                </ul>
+                                            </div>
+                                            <!-- Right Column: Development & Implementation -->
+                                            <div class="col-lg-6">
+                                                <h5>Software Developer</h5>
+                                                <ul>
+                                                    <li>Implemented features and systems for simulation products, including PTSD treatment tools and FPS-style simulations.</li>
+                                                    <li>Developed automated build pipelines and server setup processes, significantly improving deployment efficiency.</li>
+                                                    <li>Contributed to containerization efforts for applications and services.</li>
+                                                    <li>Worked extensively with C++, Python, and Go within Unreal Engine environments and cloud platforms (Azure, GCP).</li>
+                                                    <li>Involved in building and maintaining reliable data pipelines (e.g., using PowerBI).</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <h5>Key Skills & Technologies</h5>
+                                        <p>
+                                            <span class="badge bg-dark skill-badge">System Design</span>
+                                            <span class="badge bg-dark skill-badge">Software Architecture</span>
+                                            <span class="badge bg-dark skill-badge">Infrastructure Automation</span>
+                                            <span class="badge bg-dark skill-badge">CI/CD</span>
+                                            <span class="badge bg-primary skill-badge">C++</span>
+                                            <span class="badge bg-primary skill-badge">Python</span>
+                                            <span class="badge bg-primary skill-badge">Go</span>
+                                            <span class="badge bg-success skill-badge">Unreal Engine</span>
+                                            <span class="badge bg-success skill-badge">Unreal Automation</span>
+                                            <span class="badge bg-info skill-badge">Google Cloud (GCP)</span>
+                                            <span class="badge bg-info skill-badge">Kubernetes</span>
+                                            <span class="badge bg-info skill-badge">Azure</span>
+                                            <span class="badge bg-warning text-dark skill-badge">Data Pipelines</span>
+                                            <span class="badge bg-warning text-dark skill-badge">Containerization</span>
+                                             <span class="badge bg-secondary skill-badge">Leadership</span>
+                                             <span class="badge bg-secondary skill-badge">Technical Communication</span>
+                                             <span class="badge bg-secondary skill-badge">Problem Solving</span>
+                                        </p>
                                     </div>
                                 </div>
                             </div>
-                            
-                        </div>
-                    </div>
+                        </div> <!-- End mainpageContentLoad -->
+
+                    </div> <!-- End container-fluid -->
                 </main>
                 <footer class="py-4 bg-light mt-auto">
                     <div class="container-fluid px-4">
                         <div class="d-flex align-items-center justify-content-between small">
-                            <div class="text-muted">Copyright &copy; Alex Jordan 2022</div>
-                            <div>
-                                <a href="#">Privacy Policy</a>
-                                &middot;
-                                <a href="#">Terms &amp; Conditions</a>
-                            </div>
+                            <div class="text-muted">Copyright © Alexander Jordan 2022</div>
+                            <!-- Removed Privacy/Terms links -->
                         </div>
                     </div>
                 </footer>
             </div>
         </div>
+        <!-- Bootstrap Bundle JS -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <!-- SB Admin Core JS -->
         <script src="js/scripts.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
+        <!-- Optional: Simple DataTables JS (if used) -->
+        <!-- <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script> -->
+        <!-- Page Specific JS -->
         <script src="js/mainpage.js"></script>
     </body>
 </html>
+--- END OF MODIFIED index.html ---
+
+**Key Changes & Rationale:**
+
+1.  **Title & Description:** Updated `<title>` and `<meta name="description">` to be more specific and SEO-friendly.
+2.  **H1:** Changed from "whoami" to your name for better professionalism.
+3.  **Breadcrumb:** Simplified and removed the external profile links (moved them to the sidebar).
+4.  **Professional Summary:** Added the drafted paragraph summarizing your focus and experience.
+5.  **Sidebar:**
+    *   Marked the "Dashboard" link as `active`.
+    *   Renamed "Games" heading to "Demos & Projects".
+    *   Moved LinkedIn, GitHub, CodeSignal, Leetcode, CounterSocial links into a "Connect" section in the sidebar for better organization and to declutter the top breadcrumb area. Used appropriate Font Awesome brand icons (`fab fa-...`).
+6.  **Clickable Cards:**
+    *   Reduced to 3 cards (Experience, Demos, Certs) using `col-xl-4` for better spacing.
+    *   The first card ("Experience & Skills") now links to an anchor `#experienceDetails` on the page, making the default content immediately visible and accessible via the card click.
+    *   The other cards still use the `onclick` handlers.
+7.  **Main Content Area (`#mainpageContentLoad`):**
+    *   **Default Content:** This area *now directly contains* the "Professional Experience Highlights" and "Key Skills" sections. This is the default view when the page loads.
+    *   **Structure:** Used a Bootstrap `row` with two `col-lg-6` columns inside a card to present the Architect and Developer roles side-by-side on larger screens.
+    *   **Content:** Populated the sections with bullet points derived directly from your answers, focusing on responsibilities and achievements.
+    *   **Skills:** Listed key technical and soft skills using Bootstrap badges (`<span>` tags with `.badge` class) for a visually clean presentation. Grouped them slightly by type (Core, Languages, Platforms, Soft).
+
+**`mainpage.js` Adjustments Needed:**
+
+1.  **Remove `projectsHTML`:** Since the experience details are now the default HTML content, you no longer need the `projectsHTML` variable in `mainpage.js`.
+2.  **Remove `ProjectsMain()`:** The `ProjectsMain()` function is also redundant because its content is now the default. You can delete this function.
+3.  **Keep `GamesMain()` & `CertsMain()`:** These functions and their corresponding HTML variables (`gamesHTML`, `certsHTML`) should remain as they are, as they load content when their respective cards are clicked.
+4.  **Remove Euler:** Delete `eulerHTML` variable and `EulerMain()` function.
+
+**Revised `mainpage.js`:**
+
+```javascript
+// js/mainpage.js
+
+// HTML for the Games/Demos section
+var gamesHTML = `
+<div class="col-xl-8"> <!-- Make this wider -->
+    <div class="card mb-4">
+        <div class="card-header">
+            <i class="fas fa-gamepad me-1"></i>
+            Interactive Demos & Personal Projects
+        </div>
+        <div class="card-body">
+            <p>Explore some interactive web-based projects:</p>
+            <ul>
+                <li><a href="snake.html">Snake Game</a>: Classic snake game implemented in JavaScript with a simple game engine.</li>
+                <li><a href="tictac.html">Tic-Tac-Toe</a>: A web version of Tic-Tac-Toe (Potentially link to the old Python/PyGame version on GitHub if desired, or update description if this is a JS version).</li>
+                <li><a href="triangles.html">Sierpinski Generator</a>: Generates Sierpinski triangles using chaos game or Pascal's triangle methods.</li>
+                <!-- Add other relevant personal projects/demos here -->
+                 <li><a href='https://github.com/RayneDance/hockey-bot' target='_blank' rel="noopener noreferrer">Discord NHL Bot (GitHub)</a>: Python bot pulling NHL game data.</li>
+                 <li><a href='https://github.com/RayneDance/Whitespace-Remover' target='_blank' rel="noopener noreferrer">Whitespace Remover (GitHub)</a>: JavaScript tool to trim clipboard whitespace.</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="col-xl-4"> <!-- Optional side column -->
+    <div class="card-body">
+        <!-- Could add a note here, e.g., "These projects demonstrate..." -->
+    </div>
+</div>
+`;
+
+// HTML for the Certifications section
+var certsHTML = `
+<div class="col-xl-8"> <!-- Make this wider -->
+    <div class="card mb-4">
+        <div class="card-header">
+             <i class="fas fa-certificate me-1"></i>
+            Certifications
+        </div>
+        <div class="card-body">
+        <p class="mb-2"><strong><a href="https://coursera.org/share/a4568a86b1df541c4505ce568948c8db" target="_blank" rel="noopener noreferrer">Google IT Automation with Python Professional Certificate</a></strong> (Coursera)</p>
+        <p class="small">
+        This 6-course certificate program focused on writing Python scripts to automate common IT tasks, utilizing Git/GitHub for version control, troubleshooting complex problems, and applying automation at scale using configuration management and cloud platforms. Covered fundamental Python programming, interacting with operating systems, web services, and managing cloud resources (GCP focus).
+        </p>
+        <!-- Add any other relevant certs here -->
+        </div>
+    </div>
+</div>
+<div class="col-xl-4"> <!-- Optional side column -->
+    <div class="card-body"></div>
+</div>
+`;
+
+// Function to load Games content
+function GamesMain(){
+    let outer = document.getElementById("mainpageContentLoad");
+    if (outer) {
+        outer.innerHTML = gamesHTML;
+    } else {
+        console.error("Element #mainpageContentLoad not found for Games");
+    }
+}
+
+// Function to load Certs content
+function CertsMain(){
+    let outer = document.getElementById("mainpageContentLoad");
+     if (outer) {
+        outer.innerHTML = certsHTML;
+    } else {
+        console.error("Element #mainpageContentLoad not found for Certs");
+    }
+}
+
+// NOTE: ProjectsMain() and EulerMain() and their HTML variables have been removed.
+// The default content is now the Experience/Skills section directly in index.html.
